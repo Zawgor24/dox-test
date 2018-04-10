@@ -58,7 +58,7 @@ RSpec.describe Api::V1::UsersController, api: true, type: :controller do
         expect(response).to have_http_status(422)
       end
 
-      it 'does not create a new book' do
+      it 'does not create a new user' do
         expect { post :create, params: fake_user.update(email: nil) }.to_not change(User, :count)
       end
     end
