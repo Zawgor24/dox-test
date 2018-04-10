@@ -24,10 +24,10 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    deserialized_params.permit(:name, :email, :age)
+    params.permit(:name, :email, :age)
   end
 
   def serializer
-    SerializableUser
+    Api::V1::SerializableUser
   end
 end
